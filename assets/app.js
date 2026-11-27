@@ -45,13 +45,11 @@ const card=document.createElement('article');card.className='app';
 const icon=document.createElement('img');icon.src='https://development-maukka.github.io/Hockey-Intelligence-13/icon.svg';icon.alt='';icon.width=72;icon.height=72;icon.style.cssText='display:block;margin-bottom:16px;border-radius:12px';
 const title=document.createElement('h3');title.textContent='Hockey Intelligence 13';
 const description=document.createElement('p');description.textContent=descriptions[language]||descriptions.en;
-const version=document.createElement('span');version.className='release';version.textContent=t.version+' 0.3.4';
+const version=document.createElement('span');version.className='release';version.textContent=t.version+' 0.3.6';
 const open=document.createElement('a');open.className='download';open.href='https://development-maukka.github.io/Hockey-Intelligence-13/';open.textContent='Open Web App';open.rel='noopener noreferrer';
 const details=document.createElement('details');details.style.marginTop='16px';
 const summary=document.createElement('summary');summary.textContent=({fi:'Muutosloki',de:'Änderungen'})[language]||'Changelog';summary.style.cursor='pointer';details.append(summary);
-[['0.3.4','Added a language selector in settings.'],['0.3.3','Improved briefing language and factual accuracy.'],['0.3.2','Added settings for theme and followed leagues.']].forEach(([number,text])=>{const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const strong=document.createElement('strong');strong.textContent=number;entry.append(strong,document.createElement('br'),document.createTextNode(text));details.append(entry)});
+[['0.3.6','Fixed National League and Liiga scores, standings and player statistics.'],['0.3.5','Improved browser shortcut icons.'],['0.3.4','Added a language selector in settings.']].forEach(([number,text])=>{const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const strong=document.createElement('strong');strong.textContent=number;entry.append(strong,document.createElement('br'),document.createTextNode(text));details.append(entry)});
 card.append(icon,title,description,version,open,details);document.getElementById('appgrid').prepend(card);
 })();
 
-// Current Hockey Intelligence release.
-(()=>{const card=document.getElementById('appgrid').firstElementChild;if(card.querySelector('h3')?.textContent!=='Hockey Intelligence 13')return;card.querySelector('.release').textContent=t.version+' 0.3.5';const details=card.querySelector('details');details.lastElementChild.remove();const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const number=document.createElement('strong');number.textContent='0.3.5';entry.append(number,document.createElement('br'),document.createTextNode('Improved browser shortcut icons.'));details.insertBefore(entry,details.children[1]);})();
