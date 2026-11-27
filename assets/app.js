@@ -45,11 +45,11 @@ const card=document.createElement('article');card.className='app';
 const icon=document.createElement('img');icon.src='https://development-maukka.github.io/Hockey-Intelligence-13/icon.svg';icon.alt='';icon.width=72;icon.height=72;icon.style.cssText='display:block;margin-bottom:16px;border-radius:12px';
 const title=document.createElement('h3');title.textContent='Hockey Intelligence 13';
 const description=document.createElement('p');description.textContent=descriptions[language]||descriptions.en;
-const version=document.createElement('span');version.className='release';version.textContent=t.version+' 0.3.6';
+const version=document.createElement('span');version.className='release';version.textContent=t.version+' 0.3.7';
 const open=document.createElement('a');open.className='download';open.href='https://development-maukka.github.io/Hockey-Intelligence-13/';open.textContent='Open Web App';open.rel='noopener noreferrer';
 const details=document.createElement('details');details.style.marginTop='16px';
 const summary=document.createElement('summary');summary.textContent=({fi:'Muutosloki',de:'Änderungen'})[language]||'Changelog';summary.style.cursor='pointer';details.append(summary);
-[['0.3.6','Fixed National League and Liiga scores, standings and player statistics.'],['0.3.5','Improved browser shortcut icons.'],['0.3.4','Added a language selector in settings.']].forEach(([number,text])=>{const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const strong=document.createElement('strong');strong.textContent=number;entry.append(strong,document.createElement('br'),document.createTextNode(text));details.append(entry)});
+[['0.3.7','Added National League and Liiga news, transfer reports and injury updates.'],['0.3.6','Fixed National League and Liiga scores, standings and player statistics.'],['0.3.5','Improved browser shortcut icons.']].forEach(([number,text])=>{const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const strong=document.createElement('strong');strong.textContent=number;entry.append(strong,document.createElement('br'),document.createTextNode(text));details.append(entry)});
 card.append(icon,title,description,version,open,details);document.getElementById('appgrid').prepend(card);
 })();
 
