@@ -52,3 +52,6 @@ const summary=document.createElement('summary');summary.textContent=({fi:'Muutos
 [['0.3.4','Added a language selector in settings.'],['0.3.3','Improved briefing language and factual accuracy.'],['0.3.2','Added settings for theme and followed leagues.']].forEach(([number,text])=>{const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const strong=document.createElement('strong');strong.textContent=number;entry.append(strong,document.createElement('br'),document.createTextNode(text));details.append(entry)});
 card.append(icon,title,description,version,open,details);document.getElementById('appgrid').prepend(card);
 })();
+
+// Current Hockey Intelligence release.
+(()=>{const card=document.getElementById('appgrid').firstElementChild;if(card.querySelector('h3')?.textContent!=='Hockey Intelligence 13')return;card.querySelector('.release').textContent=t.version+' 0.3.5';const details=card.querySelector('details');details.lastElementChild.remove();const entry=document.createElement('p');entry.style.cssText='margin:12px 0 0;font-size:.9rem';const number=document.createElement('strong');number.textContent='0.3.5';entry.append(number,document.createElement('br'),document.createTextNode('Improved browser shortcut icons.'));details.insertBefore(entry,details.children[1]);})();
